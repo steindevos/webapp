@@ -14,13 +14,11 @@ public class Airplane {
     private long id;
     private String name;
     private int fuelLoad = 5;
-    private int airport;
+    private String airport;
 
 
     // methods
-    public void refuel() {
-        setFuelLoad(5);
-    }
+
 
 
     // setters and getters
@@ -48,11 +46,11 @@ public class Airplane {
         this.fuelLoad = fuelLoad;
     }
 
-    public int getAirport() {
+    public String getAirport() {
         return airport;
     }
 
-    public void setAirport(int airport) {
+    public void setAirport(String airport) {
         this.airport = airport;
     }
 }
