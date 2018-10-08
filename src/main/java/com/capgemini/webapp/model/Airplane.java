@@ -1,9 +1,7 @@
 package com.capgemini.webapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Airplane {
@@ -14,12 +12,16 @@ public class Airplane {
     private long id;
     private String name;
     private int fuelLoad = 5;
-    private String airport;
+
+    @ManyToOne
+    @NotNull
+    private Airport airport;
 
 
     // methods
 
-
+    // constructor
+    public Airplane(){};
 
     // setters and getters
     public long getId() {
@@ -46,11 +48,11 @@ public class Airplane {
         this.fuelLoad = fuelLoad;
     }
 
-    public String getAirport() {
+    public Airport getAirport() {
         return airport;
     }
 
-    public void setAirport(String airport) {
+    public void setAirport(Airport airport) {
         this.airport = airport;
     }
 }

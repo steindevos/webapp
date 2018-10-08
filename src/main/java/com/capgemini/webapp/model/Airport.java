@@ -15,9 +15,12 @@ public class Airport {
 
     private String name;
 
+    // constructor
+    public Airport() {
+
+    };
+
     // getters and setters
-
-
     public long getId() {
         return id;
     }
