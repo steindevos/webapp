@@ -16,13 +16,60 @@
 
 <body>
     <div class="container">
+
         <div class="row">
             <div class="col-sm-12 text-center">
                 <h1>Airplane control</h1>
             </div>
         </div>
+
+        <div class="row">
+            <div class=“col-md-12”>
+                <button id="newAirplaneBtn" class="btn btn-primary" type="text" data-toggle="modal" data-target="#newAirplaneModal"><i
+                        class="fas fa-plus"></i>Add airplane</button>
+            </div>
+        </div>
+
+        <!-- New Supplier Modal -->
+        <div id="newAirplaneModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add airplane</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="col-sm-12" data-toggle="validator" role="form" id="newAirplaneForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="inputTitle" class="control-label">Airplane name</label>
+                                <input type="text" class="form-control" id="airplaneName" placeholder="Enter airplane name"
+                                    data-error="No valid input" required>
+                            </div>
+                            <div class="my-1 form-group">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Airport</label>
+                                <select class="custom-select mr-sm-2" id="airport">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="text" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of new Supplier Modal -->
+
     </div>
-    
+
 
 
 
@@ -38,6 +85,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="js/airportCRUD.js"></script>
+    <script src="js/airplaneCRUD.js"></script>
 </body>
 
 </html>
