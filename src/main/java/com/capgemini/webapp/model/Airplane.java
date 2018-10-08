@@ -23,7 +23,6 @@ public class Airplane {
     }
 
 
-
     // setters and getters
     public long getId() {
         return id;
