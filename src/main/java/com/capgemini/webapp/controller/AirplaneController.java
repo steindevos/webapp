@@ -3,10 +3,7 @@ package com.capgemini.webapp.controller;
 import com.capgemini.webapp.model.Airplane;
 import com.capgemini.webapp.repository.AirplaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/airplane/")
@@ -27,4 +24,17 @@ public class AirplaneController {
     public Airplane create(@RequestBody Airplane airplane) {
         return airplaneRepository.save(airplane);
     }
+
+    // UPDATE request
+    @RequestMapping(method = RequestMethod.PUT)
+    public Airplane updateById(@PathVariable long id, @RequestBody Airplane airplane) {
+        if(airplaneRepository.existsById(id)){
+            airplane.setId(id);
+            airplane.flight();
+            return airplaneRepository.save(airplane);
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
 }

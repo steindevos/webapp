@@ -19,7 +19,9 @@ public class Airplane {
 
 
     // methods
-
+    public void flight() {
+        setFuelLoad(getFuelLoad()-2);
+    }
     // constructor
     public Airplane(){};
 
