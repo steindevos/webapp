@@ -26,7 +26,7 @@ public class AirplaneController {
     }
 
     // UPDATE request
-    @RequestMapping(method = RequestMethod.PUT)
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Airplane updateById(@PathVariable long id, @RequestBody Airplane airplane) {
         if(airplaneRepository.existsById(id)){
             airplane.setId(id);
